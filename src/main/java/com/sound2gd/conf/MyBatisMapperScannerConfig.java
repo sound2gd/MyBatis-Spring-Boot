@@ -46,9 +46,9 @@ public class MyBatisMapperScannerConfig {
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
-        mapperScannerConfigurer.setBasePackage("tk.mybatis.springboot.mapper");
+        mapperScannerConfigurer.setBasePackage("com.sound2gd.mapper");
         Properties properties = new Properties();
-        properties.setProperty("mappers", "MyMapper");
+        properties.setProperty("mappers", "com.sound2gd.util.MyMapper");
         properties.setProperty("notEmpty", "false");
         properties.setProperty("IDENTITY", "MYSQL");
         mapperScannerConfigurer.setProperties(properties);

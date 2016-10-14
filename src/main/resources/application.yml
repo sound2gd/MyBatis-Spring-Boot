@@ -4,7 +4,8 @@ server:
 
 logging:
     level:
-        tk.mybatis: DEBUG
+        org.springframework: WARN
+        com.sound2gd: DEBUG
 
 spring:
     datasource:
@@ -15,9 +16,9 @@ spring:
 #        type: com.alibaba.druid.pool.DruidDataSource
 #        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
         name: test
-        url: jdbc:mysql://192.168.16.137:3306/test
+        url: jdbc:mysql://localhost:3306/test
         username: root
-        password:
+        password: 123456
         # 使用druid数据源
         type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.jdbc.Driver
