@@ -28,7 +28,8 @@ import com.github.pagehelper.PageHelper;
 import com.sound2gd.mapper.CityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sound2gd.model.City;
+import tk.mybatis.springboot.mapper.CityMapper;
+import tk.mybatis.springboot.model.City;
 
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class CityService {
 
     public List<City> getAll(City city) {
         if (city.getPage() != null && city.getRows() != null) {
-            PageHelper.startPage(city.getPage(), city.getRows(), "id");
+            PageHelper.startPage(city.getPage(), city.getRows());
         }
         return cityMapper.selectAll();
     }
