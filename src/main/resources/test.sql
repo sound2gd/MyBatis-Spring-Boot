@@ -1,21 +1,66 @@
-﻿USE `test`;
+/*
+ Navicat Premium Data Transfer
 
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 50633
+ Source Host           : localhost
+ Source Database       : test
+
+ Target Server Type    : MySQL
+ Target Server Version : 50633
+ File Encoding         : utf-8
+
+ Date: 06/29/2017 15:47:18 PM
+*/
+
+SET NAMES utf8;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+--  Table structure for `city`
+-- ----------------------------
+DROP TABLE IF EXISTS `city`;
+CREATE TABLE `city` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime NOT NULL COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='市级信息';
+
+-- ----------------------------
+--  Records of `city`
+-- ----------------------------
+BEGIN;
+INSERT INTO `city` VALUES ('1', '石家庄', '河北', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('2', '邯郸', '河北', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `country`
+-- ----------------------------
 DROP TABLE IF EXISTS `country`;
 CREATE TABLE `country` (
   `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `countryname` varchar(255) DEFAULT NULL COMMENT '名称',
   `countrycode` varchar(255) DEFAULT NULL COMMENT '代码',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='国家信息';
+) ENGINE=InnoDB AUTO_INCREMENT=184 DEFAULT CHARSET=utf8 COMMENT='国家信息';
 
-DROP TABLE IF EXISTS `city`;
-CREATE TABLE `city` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  `state` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='市级信息';
+-- ----------------------------
+--  Records of `country`
+-- ----------------------------
+BEGIN;
+INSERT INTO `country` VALUES ('1', 'Angola', 'AO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('2', 'Afghanistan', 'AF', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('3', 'Albania', 'AL', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('4', 'Algeria', 'DZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('5', 'Andorra', 'AD', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('6', 'Anguilla', 'AI', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('7', 'Antigua and Barbuda', 'AG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('8', 'Argentina', 'AR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('9', 'Armenia', 'AM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('10', 'Australia', 'AU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('11', 'Austria', 'A3', '0000-00-00 00:00:00', '2017-06-29 15:39:38'), ('12', 'Azerbaijan', 'AZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('13', 'Bahamas', 'BS', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('14', 'Bahrain', 'BH', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('15', 'Bangladesh', 'BD', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('16', 'Barbados', 'BB', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('17', 'Belarus', 'BY', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('18', 'Belgium', 'BE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('19', 'Belize', 'BZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('20', 'Benin', 'BJ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('21', 'Bermuda Is.', 'BM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('22', 'Bolivia', 'BO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('23', 'Botswana', 'BW', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('24', 'Brazil', 'BR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('25', 'Brunei', 'BN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('26', 'Bulgaria', 'BG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('27', 'Burkina-faso', 'BF', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('28', 'Burma', 'MM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('29', 'Burundi', 'BI', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('30', 'Cameroon', 'CM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('31', 'Canada', 'CA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('32', 'Central African Republic', 'CF', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('33', 'Chad', 'TD', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('34', 'Chile', 'CL', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('35', 'China', 'CN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('36', 'Colombia', 'CO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('37', 'Congo', 'CG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('38', 'Cook Is.', 'CK', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('39', 'Costa Rica', 'CR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('40', 'Cuba', 'CU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('41', 'Cyprus', 'CY', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('42', 'Czech Republic', 'CZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('43', 'Denmark', 'DK', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('44', 'Djibouti', 'DJ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('45', 'Dominica Rep.', 'DO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('46', 'Ecuador', 'EC', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('47', 'Egypt', 'EG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('48', 'EI Salvador', 'SV', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('49', 'Estonia', 'EE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('50', 'Ethiopia', 'ET', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('51', 'Fiji', 'FJ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('52', 'Finland', 'FI', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('53', 'France', 'FR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('54', 'French Guiana', 'GF', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('55', 'Gabon', 'GA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('56', 'Gambia', 'GM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('57', 'Georgia', 'GE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('58', 'Germany', 'DE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('59', 'Ghana', 'GH', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('60', 'Gibraltar', 'GI', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('61', 'Greece', 'GR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('62', 'Grenada', 'GD', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('63', 'Guam', 'GU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('64', 'Guatemala', 'GT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('65', 'Guinea', 'GN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('66', 'Guyana', 'GY', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('67', 'Haiti', 'HT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('68', 'Honduras', 'HN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('69', 'Hongkong', 'HK', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('70', 'Hungary', 'HU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('71', 'Iceland', 'IS', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('72', 'India', 'IN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('73', 'Indonesia', 'ID', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('74', 'Iran', 'IR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('75', 'Iraq', 'IQ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('76', 'Ireland', 'IE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('77', 'Israel', 'IL', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('78', 'Italy', 'IT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('79', 'Jamaica', 'JM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('80', 'Japan', 'JP', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('81', 'Jordan', 'JO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('82', 'Kampuchea (Cambodia )', 'KH', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('83', 'Kazakstan', 'KZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('84', 'Kenya', 'KE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('85', 'Korea', 'KR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('86', 'Kuwait', 'KW', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('87', 'Kyrgyzstan', 'KG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('88', 'Laos', 'LA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('89', 'Latvia', 'LV', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('90', 'Lebanon', 'LB', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('91', 'Lesotho', 'LS', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('92', 'Liberia', 'LR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('93', 'Libya', 'LY', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('94', 'Liechtenstein', 'LI', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('95', 'Lithuania', 'LT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('96', 'Luxembourg', 'LU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('97', 'Macao', 'MO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('98', 'Madagascar', 'MG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('99', 'Malawi', 'MW', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('100', 'Malaysia', 'MY', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('101', 'Maldives', 'MV', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('102', 'Mali', 'ML', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('103', 'Malta', 'MT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('104', 'Mauritius', 'MU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('105', 'Mexico', 'MX', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('106', 'Moldova, Republic of', 'MD', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('107', 'Monaco', 'MC', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('108', 'Mongolia', 'MN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('109', 'Montserrat Is', 'MS', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('110', 'Morocco', 'MA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('111', 'Mozambique', 'MZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('112', 'Namibia', 'NA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('113', 'Nauru', 'NR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('114', 'Nepal', 'NP', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('115', 'Netherlands', 'NL', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('116', 'New Zealand', 'NZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('117', 'Nicaragua', 'NI', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('118', 'Niger', 'NE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('119', 'Nigeria', 'NG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('120', 'North Korea', 'KP', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('121', 'Norway', 'NO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('122', 'Oman', 'OM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('123', 'Pakistan', 'PK', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('124', 'Panama', 'PA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('125', 'Papua New Cuinea', 'PG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('126', 'Paraguay', 'PY', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('127', 'Peru', 'PE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('128', 'Philippines', 'PH', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('129', 'Poland', 'PL', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('130', 'French Polynesia', 'PF', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('131', 'Portugal', 'PT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('132', 'Puerto Rico', 'PR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('133', 'Qatar', 'QA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('134', 'Romania', 'RO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('135', 'Russia', 'RU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('136', 'Saint Lueia', 'LC', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('137', 'Saint Vincent', 'VC', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('138', 'San Marino', 'SM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('139', 'Sao Tome and Principe', 'ST', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('140', 'Saudi Arabia', 'SA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('141', 'Senegal', 'SN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('142', 'Seychelles', 'SC', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('143', 'Sierra Leone', 'SL', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('144', 'Singapore', 'SG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('145', 'Slovakia', 'SK', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('146', 'Slovenia', 'SI', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('147', 'Solomon Is', 'SB', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('148', 'Somali', 'SO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('149', 'South Africa', 'ZA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('150', 'Spain', 'ES', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('151', 'Sri Lanka', 'LK', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('152', 'St.Lucia', 'LC', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('153', 'St.Vincent', 'VC', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('154', 'Sudan', 'SD', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('155', 'Suriname', 'SR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('156', 'Swaziland', 'SZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('157', 'Sweden', 'SE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('158', 'Switzerland', 'CH', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('159', 'Syria', 'SY', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('160', 'Taiwan', 'TW', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('161', 'Tajikstan', 'TJ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('162', 'Tanzania', 'TZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('163', 'Thailand', 'TH', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('164', 'Togo', 'TG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('165', 'Tonga', 'TO', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('166', 'Trinidad and Tobago', 'TT', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('167', 'Tunisia', 'TN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('168', 'Turkey', 'TR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('169', 'Turkmenistan', 'TM', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('170', 'Uganda', 'UG', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('171', 'Ukraine', 'UA', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('172', 'United Arab Emirates', 'AE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('173', 'United Kiongdom', 'GB', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('174', 'United States of America', 'US', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('175', 'Uruguay', 'UY', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('176', 'Uzbekistan', 'UZ', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('177', 'Venezuela', 'VE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('178', 'Vietnam', 'VN', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('179', 'Yemen', 'YE', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('180', 'Yugoslavia', 'YU', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('181', 'Zimbabwe', 'ZW', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('182', 'Zaire', 'ZR', '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('183', 'Zambia', 'ZM', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+COMMIT;
 
+-- ----------------------------
+--  Table structure for `user_info`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_info`;
 CREATE TABLE `user_info` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL DEFAULT '' COMMENT '用户名',
@@ -26,201 +71,16 @@ CREATE TABLE `user_info` (
   `qq` varchar(14) DEFAULT NULL COMMENT 'QQ',
   `email` varchar(100) DEFAULT NULL,
   `tel` varchar(255) DEFAULT NULL COMMENT '联系电话',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime NOT NULL COMMENT '修改时间',
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
--- 用户信息
-INSERT INTO `user_info` VALUES ('1', 'test1', '12345678', '1', null, null, null, null, null);
-INSERT INTO `user_info` VALUES ('2', 'test2', 'aaaa', '2', null, null, null, null, null);
-INSERT INTO `user_info` VALUES ('3', 'test3', 'bbbb', '1', null, null, null, null, null);
-INSERT INTO `user_info` VALUES ('4', 'test4', 'cccc', '2', null, null, null, null, null);
-INSERT INTO `user_info` VALUES ('5', 'test5', 'dddd', '1', null, null, null, null, null);
+-- ----------------------------
+--  Records of `user_info`
+-- ----------------------------
+BEGIN;
+INSERT INTO `user_info` VALUES ('1', 'test1', '12345678', '1', null, null, null, null, null, '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('2', 'test2', 'aaaa', '2', null, null, null, null, null, '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('3', 'test3', 'bbbb', '1', null, null, null, null, null, '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('4', 'test4', 'cccc', '2', null, null, null, null, null, '0000-00-00 00:00:00', '0000-00-00 00:00:00'), ('5', 'test5', 'dddd', '1', null, null, null, null, null, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+COMMIT;
 
--- 国家信息
-INSERT INTO `country` VALUES (1,'Angola','AO');
-INSERT INTO `country` VALUES (2,'Afghanistan','AF');
-INSERT INTO `country` VALUES (3,'Albania','AL');
-INSERT INTO `country` VALUES (4,'Algeria','DZ');
-INSERT INTO `country` VALUES (5,'Andorra','AD');
-INSERT INTO `country` VALUES (6,'Anguilla','AI');
-INSERT INTO `country` VALUES (7,'Antigua and Barbuda','AG');
-INSERT INTO `country` VALUES (8,'Argentina','AR');
-INSERT INTO `country` VALUES (9,'Armenia','AM');
-INSERT INTO `country` VALUES (10,'Australia','AU');
-INSERT INTO `country` VALUES (11,'Austria','AT');
-INSERT INTO `country` VALUES (12,'Azerbaijan','AZ');
-INSERT INTO `country` VALUES (13,'Bahamas','BS');
-INSERT INTO `country` VALUES (14,'Bahrain','BH');
-INSERT INTO `country` VALUES (15,'Bangladesh','BD');
-INSERT INTO `country` VALUES (16,'Barbados','BB');
-INSERT INTO `country` VALUES (17,'Belarus','BY');
-INSERT INTO `country` VALUES (18,'Belgium','BE');
-INSERT INTO `country` VALUES (19,'Belize','BZ');
-INSERT INTO `country` VALUES (20,'Benin','BJ');
-INSERT INTO `country` VALUES (21,'Bermuda Is.','BM');
-INSERT INTO `country` VALUES (22,'Bolivia','BO');
-INSERT INTO `country` VALUES (23,'Botswana','BW');
-INSERT INTO `country` VALUES (24,'Brazil','BR');
-INSERT INTO `country` VALUES (25,'Brunei','BN');
-INSERT INTO `country` VALUES (26,'Bulgaria','BG');
-INSERT INTO `country` VALUES (27,'Burkina-faso','BF');
-INSERT INTO `country` VALUES (28,'Burma','MM');
-INSERT INTO `country` VALUES (29,'Burundi','BI');
-INSERT INTO `country` VALUES (30,'Cameroon','CM');
-INSERT INTO `country` VALUES (31,'Canada','CA');
-INSERT INTO `country` VALUES (32,'Central African Republic','CF');
-INSERT INTO `country` VALUES (33,'Chad','TD');
-INSERT INTO `country` VALUES (34,'Chile','CL');
-INSERT INTO `country` VALUES (35,'China','CN');
-INSERT INTO `country` VALUES (36,'Colombia','CO');
-INSERT INTO `country` VALUES (37,'Congo','CG');
-INSERT INTO `country` VALUES (38,'Cook Is.','CK');
-INSERT INTO `country` VALUES (39,'Costa Rica','CR');
-INSERT INTO `country` VALUES (40,'Cuba','CU');
-INSERT INTO `country` VALUES (41,'Cyprus','CY');
-INSERT INTO `country` VALUES (42,'Czech Republic','CZ');
-INSERT INTO `country` VALUES (43,'Denmark','DK');
-INSERT INTO `country` VALUES (44,'Djibouti','DJ');
-INSERT INTO `country` VALUES (45,'Dominica Rep.','DO');
-INSERT INTO `country` VALUES (46,'Ecuador','EC');
-INSERT INTO `country` VALUES (47,'Egypt','EG');
-INSERT INTO `country` VALUES (48,'EI Salvador','SV');
-INSERT INTO `country` VALUES (49,'Estonia','EE');
-INSERT INTO `country` VALUES (50,'Ethiopia','ET');
-INSERT INTO `country` VALUES (51,'Fiji','FJ');
-INSERT INTO `country` VALUES (52,'Finland','FI');
-INSERT INTO `country` VALUES (53,'France','FR');
-INSERT INTO `country` VALUES (54,'French Guiana','GF');
-INSERT INTO `country` VALUES (55,'Gabon','GA');
-INSERT INTO `country` VALUES (56,'Gambia','GM');
-INSERT INTO `country` VALUES (57,'Georgia','GE');
-INSERT INTO `country` VALUES (58,'Germany','DE');
-INSERT INTO `country` VALUES (59,'Ghana','GH');
-INSERT INTO `country` VALUES (60,'Gibraltar','GI');
-INSERT INTO `country` VALUES (61,'Greece','GR');
-INSERT INTO `country` VALUES (62,'Grenada','GD');
-INSERT INTO `country` VALUES (63,'Guam','GU');
-INSERT INTO `country` VALUES (64,'Guatemala','GT');
-INSERT INTO `country` VALUES (65,'Guinea','GN');
-INSERT INTO `country` VALUES (66,'Guyana','GY');
-INSERT INTO `country` VALUES (67,'Haiti','HT');
-INSERT INTO `country` VALUES (68,'Honduras','HN');
-INSERT INTO `country` VALUES (69,'Hongkong','HK');
-INSERT INTO `country` VALUES (70,'Hungary','HU');
-INSERT INTO `country` VALUES (71,'Iceland','IS');
-INSERT INTO `country` VALUES (72,'India','IN');
-INSERT INTO `country` VALUES (73,'Indonesia','ID');
-INSERT INTO `country` VALUES (74,'Iran','IR');
-INSERT INTO `country` VALUES (75,'Iraq','IQ');
-INSERT INTO `country` VALUES (76,'Ireland','IE');
-INSERT INTO `country` VALUES (77,'Israel','IL');
-INSERT INTO `country` VALUES (78,'Italy','IT');
-INSERT INTO `country` VALUES (79,'Jamaica','JM');
-INSERT INTO `country` VALUES (80,'Japan','JP');
-INSERT INTO `country` VALUES (81,'Jordan','JO');
-INSERT INTO `country` VALUES (82,'Kampuchea (Cambodia )','KH');
-INSERT INTO `country` VALUES (83,'Kazakstan','KZ');
-INSERT INTO `country` VALUES (84,'Kenya','KE');
-INSERT INTO `country` VALUES (85,'Korea','KR');
-INSERT INTO `country` VALUES (86,'Kuwait','KW');
-INSERT INTO `country` VALUES (87,'Kyrgyzstan','KG');
-INSERT INTO `country` VALUES (88,'Laos','LA');
-INSERT INTO `country` VALUES (89,'Latvia','LV');
-INSERT INTO `country` VALUES (90,'Lebanon','LB');
-INSERT INTO `country` VALUES (91,'Lesotho','LS');
-INSERT INTO `country` VALUES (92,'Liberia','LR');
-INSERT INTO `country` VALUES (93,'Libya','LY');
-INSERT INTO `country` VALUES (94,'Liechtenstein','LI');
-INSERT INTO `country` VALUES (95,'Lithuania','LT');
-INSERT INTO `country` VALUES (96,'Luxembourg','LU');
-INSERT INTO `country` VALUES (97,'Macao','MO');
-INSERT INTO `country` VALUES (98,'Madagascar','MG');
-INSERT INTO `country` VALUES (99,'Malawi','MW');
-INSERT INTO `country` VALUES (100,'Malaysia','MY');
-INSERT INTO `country` VALUES (101,'Maldives','MV');
-INSERT INTO `country` VALUES (102,'Mali','ML');
-INSERT INTO `country` VALUES (103,'Malta','MT');
-INSERT INTO `country` VALUES (104,'Mauritius','MU');
-INSERT INTO `country` VALUES (105,'Mexico','MX');
-INSERT INTO `country` VALUES (106,'Moldova, Republic of','MD');
-INSERT INTO `country` VALUES (107,'Monaco','MC');
-INSERT INTO `country` VALUES (108,'Mongolia','MN');
-INSERT INTO `country` VALUES (109,'Montserrat Is','MS');
-INSERT INTO `country` VALUES (110,'Morocco','MA');
-INSERT INTO `country` VALUES (111,'Mozambique','MZ');
-INSERT INTO `country` VALUES (112,'Namibia','NA');
-INSERT INTO `country` VALUES (113,'Nauru','NR');
-INSERT INTO `country` VALUES (114,'Nepal','NP');
-INSERT INTO `country` VALUES (115,'Netherlands','NL');
-INSERT INTO `country` VALUES (116,'New Zealand','NZ');
-INSERT INTO `country` VALUES (117,'Nicaragua','NI');
-INSERT INTO `country` VALUES (118,'Niger','NE');
-INSERT INTO `country` VALUES (119,'Nigeria','NG');
-INSERT INTO `country` VALUES (120,'North Korea','KP');
-INSERT INTO `country` VALUES (121,'Norway','NO');
-INSERT INTO `country` VALUES (122,'Oman','OM');
-INSERT INTO `country` VALUES (123,'Pakistan','PK');
-INSERT INTO `country` VALUES (124,'Panama','PA');
-INSERT INTO `country` VALUES (125,'Papua New Cuinea','PG');
-INSERT INTO `country` VALUES (126,'Paraguay','PY');
-INSERT INTO `country` VALUES (127,'Peru','PE');
-INSERT INTO `country` VALUES (128,'Philippines','PH');
-INSERT INTO `country` VALUES (129,'Poland','PL');
-INSERT INTO `country` VALUES (130,'French Polynesia','PF');
-INSERT INTO `country` VALUES (131,'Portugal','PT');
-INSERT INTO `country` VALUES (132,'Puerto Rico','PR');
-INSERT INTO `country` VALUES (133,'Qatar','QA');
-INSERT INTO `country` VALUES (134,'Romania','RO');
-INSERT INTO `country` VALUES (135,'Russia','RU');
-INSERT INTO `country` VALUES (136,'Saint Lueia','LC');
-INSERT INTO `country` VALUES (137,'Saint Vincent','VC');
-INSERT INTO `country` VALUES (138,'San Marino','SM');
-INSERT INTO `country` VALUES (139,'Sao Tome and Principe','ST');
-INSERT INTO `country` VALUES (140,'Saudi Arabia','SA');
-INSERT INTO `country` VALUES (141,'Senegal','SN');
-INSERT INTO `country` VALUES (142,'Seychelles','SC');
-INSERT INTO `country` VALUES (143,'Sierra Leone','SL');
-INSERT INTO `country` VALUES (144,'Singapore','SG');
-INSERT INTO `country` VALUES (145,'Slovakia','SK');
-INSERT INTO `country` VALUES (146,'Slovenia','SI');
-INSERT INTO `country` VALUES (147,'Solomon Is','SB');
-INSERT INTO `country` VALUES (148,'Somali','SO');
-INSERT INTO `country` VALUES (149,'South Africa','ZA');
-INSERT INTO `country` VALUES (150,'Spain','ES');
-INSERT INTO `country` VALUES (151,'Sri Lanka','LK');
-INSERT INTO `country` VALUES (152,'St.Lucia','LC');
-INSERT INTO `country` VALUES (153,'St.Vincent','VC');
-INSERT INTO `country` VALUES (154,'Sudan','SD');
-INSERT INTO `country` VALUES (155,'Suriname','SR');
-INSERT INTO `country` VALUES (156,'Swaziland','SZ');
-INSERT INTO `country` VALUES (157,'Sweden','SE');
-INSERT INTO `country` VALUES (158,'Switzerland','CH');
-INSERT INTO `country` VALUES (159,'Syria','SY');
-INSERT INTO `country` VALUES (160,'Taiwan','TW');
-INSERT INTO `country` VALUES (161,'Tajikstan','TJ');
-INSERT INTO `country` VALUES (162,'Tanzania','TZ');
-INSERT INTO `country` VALUES (163,'Thailand','TH');
-INSERT INTO `country` VALUES (164,'Togo','TG');
-INSERT INTO `country` VALUES (165,'Tonga','TO');
-INSERT INTO `country` VALUES (166,'Trinidad and Tobago','TT');
-INSERT INTO `country` VALUES (167,'Tunisia','TN');
-INSERT INTO `country` VALUES (168,'Turkey','TR');
-INSERT INTO `country` VALUES (169,'Turkmenistan','TM');
-INSERT INTO `country` VALUES (170,'Uganda','UG');
-INSERT INTO `country` VALUES (171,'Ukraine','UA');
-INSERT INTO `country` VALUES (172,'United Arab Emirates','AE');
-INSERT INTO `country` VALUES (173,'United Kiongdom','GB');
-INSERT INTO `country` VALUES (174,'United States of America','US');
-INSERT INTO `country` VALUES (175,'Uruguay','UY');
-INSERT INTO `country` VALUES (176,'Uzbekistan','UZ');
-INSERT INTO `country` VALUES (177,'Venezuela','VE');
-INSERT INTO `country` VALUES (178,'Vietnam','VN');
-INSERT INTO `country` VALUES (179,'Yemen','YE');
-INSERT INTO `country` VALUES (180,'Yugoslavia','YU');
-INSERT INTO `country` VALUES (181,'Zimbabwe','ZW');
-INSERT INTO `country` VALUES (182,'Zaire','ZR');
-INSERT INTO `country` VALUES (183,'Zambia','ZM');
-
--- 城市信息
-INSERT INTO `city` VALUES ('1', '石家庄', '河北');
-INSERT INTO `city` VALUES ('2', '邯郸', '河北');
+SET FOREIGN_KEY_CHECKS = 1;
