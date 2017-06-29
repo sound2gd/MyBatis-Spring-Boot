@@ -20,4 +20,5 @@
 1. 完成一个简单的后台
 2. 更多test case和examples
 3. 使用Vue来写前端页面
+4. 添加权限,预计使用spring-security或者shiro二者之一
 
