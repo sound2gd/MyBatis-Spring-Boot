@@ -22,49 +22,18 @@
  * THE SOFTWARE.
  */
 
-package com.sound2gd.model;
+package com.sound2gd.common.crud;
 
-import javax.persistence.*;
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
 
 /**
- * 基础信息
+ * 继承自己的MyMapper
  *
  * @author liuzh
- * @since 2016-01-31 21:42
+ * @since 2015-09-06 21:53
  */
-public class BaseEntity {
-    @Id
-    @Column(name = "Id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @Transient
-    private Integer page = 1;
-
-    @Transient
-    private Integer rows = 10;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getPage() {
-        return page;
-    }
-
-    public void setPage(Integer page) {
-        this.page = page;
-    }
-
-    public Integer getRows() {
-        return rows;
-    }
-
-    public void setRows(Integer rows) {
-        this.rows = rows;
-    }
+public interface BaseMapper<T> extends Mapper<T>, MySqlMapper<T> {
+    //TODO
+    //FIXME 特别注意，该接口不能被扫描到，否则会出错
 }

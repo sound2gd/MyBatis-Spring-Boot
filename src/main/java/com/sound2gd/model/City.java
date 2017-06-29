@@ -24,6 +24,8 @@
 
 package com.sound2gd.model;
 
+import com.sound2gd.common.crud.BaseEntity;
+
 /**
  * @author liuzh_3nofxnp
  * @since 2016-01-22 22:16

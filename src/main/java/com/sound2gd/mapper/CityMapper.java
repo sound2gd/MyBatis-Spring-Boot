@@ -25,11 +25,11 @@
 package com.sound2gd.mapper;
 
 import com.sound2gd.model.City;
-import com.sound2gd.util.MyMapper;
+import com.sound2gd.common.crud.BaseMapper;
 
 /**
  * @author liuzh_3nofxnp
  * @since 2016-01-22 22:17
  */
-public interface CityMapper extends MyMapper<City> {
+public interface CityMapper extends BaseMapper<City> {
 }

@@ -4,6 +4,7 @@ target/
 # IDEA #
 .idea/
 *.iml
+.meghanada/
 
 # Eclipse #
 .settings/

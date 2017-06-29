@@ -24,12 +24,10 @@
 
 package com.sound2gd.service;
 
-import com.github.pagehelper.PageHelper;
+import com.sound2gd.common.crud.CRUDService;
 import com.sound2gd.mapper.CityMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.sound2gd.model.City;
 import org.springframework.stereotype.Service;
-import tk.mybatis.springboot.mapper.CityMapper;
-import tk.mybatis.springboot.model.City;
 
 import java.util.List;
 
@@ -38,31 +36,9 @@ import java.util.List;
  * @since 2015-12-19 11:09
  */
 @Service
-public class CityService {
-
-    @Autowired
-    private CityMapper cityMapper;
+public class CityService extends CRUDService<CityMapper, City> {
 
     public List<City> getAll(City city) {
-        if (city.getPage() != null && city.getRows() != null) {
-            PageHelper.startPage(city.getPage(), city.getRows());
-        }
-        return cityMapper.selectAll();
-    }
-
-    public City getById(Integer id) {
-        return cityMapper.selectByPrimaryKey(id);
-    }
-
-    public void deleteById(Integer id) {
-        cityMapper.deleteByPrimaryKey(id);
-    }
-
-    public void save(City country) {
-        if (country.getId() != null) {
-            cityMapper.updateByPrimaryKey(country);
-        } else {
-            cityMapper.insert(country);
-        }
+        return findList(city);
     }
 }

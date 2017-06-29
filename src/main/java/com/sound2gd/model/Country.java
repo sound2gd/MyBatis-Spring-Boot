@@ -24,6 +24,8 @@
 
 package com.sound2gd.model;
 
+import com.sound2gd.common.crud.BaseEntity;
+
 public class Country extends BaseEntity {
     /**
      * 名称

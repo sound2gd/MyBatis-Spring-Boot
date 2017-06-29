@@ -25,8 +25,8 @@
 package com.sound2gd.mapper;
 
 import com.sound2gd.model.Country;
-import com.sound2gd.util.MyMapper;
+import com.sound2gd.common.crud.BaseMapper;
 
-public interface CountryMapper extends MyMapper<Country> {
+public interface CountryMapper extends BaseMapper<Country> {
 
 }

@@ -11,7 +11,7 @@
         <property name="endingDelimiter" value="`"/>
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="tk.mybatis.springboot.util.MyMapper"/>
+            <property name="mappers" value="com.sound2gd.common.crud.BaseMapper"/>
         </plugin>
 
         <jdbcConnection driverClass="${druid.driver-class}"
@@ -20,11 +20,13 @@
                         password="${druid.password}">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="tk.mybatis.springboot.model" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.sound2gd.model" targetProject="src/main/java">
+          <property name="rootClass" value="com.sound2gd.common.crud.BaseEntity"/>
+        </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
-        <javaClientGenerator targetPackage="tk.mybatis.springboot.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.sound2gd.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
         <table tableName="%">

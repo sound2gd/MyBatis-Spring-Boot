@@ -25,6 +25,7 @@
 package com.sound2gd.service;
 
 import com.github.pagehelper.PageHelper;
+import com.sound2gd.common.crud.CRUDService;
 import com.sound2gd.model.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,31 +38,10 @@ import java.util.List;
  * @since 2015-12-19 11:09
  */
 @Service
-public class CountryService {
-
-    @Autowired
-    private CountryMapper countryMapper;
+public class CountryService extends CRUDService<CountryMapper,Country> {
 
     public List<Country> getAll(Country country) {
-        if (country.getPage() != null && country.getRows() != null) {
-            PageHelper.startPage(country.getPage(), country.getRows());
-        }
-        return countryMapper.selectAll();
+        return findList(country);
     }
 
-    public Country getById(Integer id) {
-        return countryMapper.selectByPrimaryKey(id);
-    }
-
-    public void deleteById(Integer id) {
-        countryMapper.deleteByPrimaryKey(id);
-    }
-
-    public void save(Country country) {
-        if (country.getId() != null) {
-            countryMapper.updateByPrimaryKey(country);
-        } else {
-            countryMapper.insert(country);
-        }
-    }
 }

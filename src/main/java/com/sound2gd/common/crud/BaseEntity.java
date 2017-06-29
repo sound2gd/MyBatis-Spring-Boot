@@ -22,24 +22,72 @@
  * THE SOFTWARE.
  */
 
-package com.sound2gd.service;
+package com.sound2gd.common.crud;
 
-import com.sound2gd.common.crud.CRUDService;
-import com.sound2gd.mapper.UserInfoMapper;
-import com.sound2gd.model.UserInfo;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
+ * 基础信息
+ *
  * @author liuzh
  * @since 2016-01-31 21:42
  */
-@Service
-public class UserInfoService extends CRUDService<UserInfoMapper,UserInfo>{
+public class BaseEntity {
+    @Id
+    @Column(name = "Id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    public List<UserInfo> getAll(UserInfo userInfo) {
-        return findList(userInfo);
+    @Transient
+    private Integer page = 1;
+
+    @Transient
+    private Integer rows = 10;
+
+    @Column(name = "create_time")
+    private Date createTime; // 创建时间
+
+    @Column(name = "update_time")
+    private Date updateTime; // 修改时间
+
+    public Date getCreateTime() {
+        return createTime;
     }
 
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public Integer getRows() {
+        return rows;
+    }
+
+    public void setRows(Integer rows) {
+        this.rows = rows;
+    }
 }

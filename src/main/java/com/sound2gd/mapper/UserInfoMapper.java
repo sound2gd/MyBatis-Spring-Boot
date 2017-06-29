@@ -25,11 +25,11 @@
 package com.sound2gd.mapper;
 
 import com.sound2gd.model.UserInfo;
-import com.sound2gd.util.MyMapper;
+import com.sound2gd.common.crud.BaseMapper;
 
 /**
  * @author liuzh_3nofxnp
  * @since 2016-01-22 22:17
  */
-public interface UserInfoMapper extends MyMapper<UserInfo> {
+public interface UserInfoMapper extends BaseMapper<UserInfo> {
 }
